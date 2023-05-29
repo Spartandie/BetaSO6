@@ -96,7 +96,7 @@ public class ColaProcesos{
         return true;
     }
 
-    public boolean print_actual(){
+    public boolean print_actual(Ram ram){
         if(is_empty())
         {
             return false;
@@ -118,7 +118,9 @@ public class ColaProcesos{
         System.out.println("Instrucciones totales: "+this.head.getTotalInstructions());
         System.out.println("Instrucciones ejecutadas: "+this.head.getEjecutadas());
 
-        this.head.getTable().imprimirDirecciones();
+        this.head.getTable().imprimirDirecciones(ram.getRam(), this.head.getPid());
+        this.head.getTable().printTable(this.head);
+
 
 
 

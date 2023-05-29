@@ -150,26 +150,87 @@ public class Ram{
 		}
 	}
 
-	public void imprimirListaLigada(){
-		linkedList.printLinkedList();
+
+	public void desfragmentar(){
+
+		/*
+			P->H->P
+
+
+			H:0:128
+			P:128:256
+
+
+
+			RAM FRAGMENTADA
+			P:0:256
+			H:256:256
+			P:512:512
+			*/
+
+			/*RAM DESFRAGMENTADA
+			P:0:256
+			P:256:512
+			H:768:256
+		*/
+		LinkedNode h = new LinkedNode();
+		LinkedNode p = new LinkedNode();
+		int baseh;
+		int limiteh;
+		int basep;
+		int limitep;
+		for(h=this.linkedList.getHead();h!=linkedList.getTail();h=h.getNext()){
+			if(h.getTipo().equals("H")){
+				baseh=h.getInicio();
+				limiteh=h.getSize();
+				p=h.getNext();
+				basep=p.getInicio();
+				limitep=p.getSize();
+				System.out.println("H:"+baseh+":"+limiteh);
+				System.out.println("P:"+basep+":"+limitep);
+
+
+				for (int i = baseh, j = basep, c=0;c<limiteh;i++,j++,c++){
+						ram[i]=ram[j];
+						//ram[j]=0;
+						/*
+							0 			1
+							0	 		1	
+							1 			1
+							1 			1
+							1           5
+							1           .
+							5   		.
+						*/
+				}
+				for(int i = baseh+limiteh, j=basep+limiteh,c=0; c<limitep-limiteh;i++,j++,c++){
+					ram[i]=ram[j];
+					//ram[j]=0;
+				}
+
+
+
+			}
+		}
+
 	}
 
 
 
+	public void imprimirListaLigada(){
+		linkedList.printLinkedList();
+	}
+
+	public int[] getRam(){
+		return this.ram;
+	}
+
 
 }
 
-/*
-	1
-	1
-	1
-	1
-	0
-	0
-	2
-	2
-	2
-	2
-*/
+
+
+
+
 
 

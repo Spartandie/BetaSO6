@@ -39,9 +39,7 @@ public class FinishedNode{
 
 /*
 1:Corregir bug
-2:
--Lista finalizados
--Lista eliminados
+2:Ya
 3:Ya
 4:Ya
 5:Ya

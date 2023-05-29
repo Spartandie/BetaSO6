@@ -8,7 +8,8 @@ public class SimuladorProcesos{
 
 
 	static int id_count=1;
-    static int[] psize = {64, 128, 256, 512};
+    //static int[] psize = {64, 128, 256, 512};
+    static int[] psize = {64, 128, 256};
     static Ram ram = new Ram();
     static ColaProcesos l = new ColaProcesos();
     static ListaFinalizados lf = new ListaFinalizados();
@@ -26,7 +27,7 @@ public class SimuladorProcesos{
             System.out.println("Elija una opción:\n1.-Crear Proceso nuevo\n2.-Ver estado de los procesos");
             System.out.println("3.-Ver estado de la memoria\n4.-Imprimir cola de procesos\n5.-Ver proceso actual");
             System.out.println("6.-Ejecutar proceso actual\n7.-Pasar al proceso siguiente\n8.-Matar proceso actual");
-            System.out.print("9.-Desfragmentar memoria\n10.Devmode\n11.Salir\n==>");
+            System.out.print("9.-Desfragmentar memoria\n10.Salir\n==>");
             option = in.nextLine();
             //limpiarPantalla();
             switch (option) {
@@ -54,7 +55,6 @@ public class SimuladorProcesos{
                                 break;
 
                             default:
-                                System.out.print("Opción invalida, ");
                                 System.out.print("Opción invalida, ");
                                 break;
                         }
@@ -140,7 +140,7 @@ public class SimuladorProcesos{
 
     public static void verActual(){
     	System.out.println("Ver proceso actual");
-    	l.print_actual();
+    	l.print_actual(ram);
     }
 
 
@@ -162,12 +162,17 @@ public class SimuladorProcesos{
 
     public static void desfragmentarMemoria(){
     	System.out.println("desfragmentarRAM");
+        ram.desfragmentar();
+
     }
 
     public static void salir(){
     	System.out.println("Salir del programa");
     	System.out.println("Presiona enter para salir");
-    	limpiarPantalla();
+        l.print_list();
+        ram.imprimirListaLigada();
+
+    	//limpiarPantalla();
     	//option = in.nextLine();
     }
 

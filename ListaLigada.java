@@ -8,6 +8,13 @@ public class ListaLigada{
         this.tail=null;
     }
 
+    public LinkedNode getHead(){
+        return this.head;
+    }
+
+     public LinkedNode getTail(){
+        return this.tail;
+    }
 
     public boolean add_LinkedNode(String tipo, int inicio, int size){
 
@@ -73,12 +80,12 @@ public class ListaLigada{
                     {
                         //Agrega nodo de proceso con inicia y tamaño
                         add_LinkedNode("P", inicia,contador);
-                        //System.out.println("P:"+inicia+":"+contador);
+
                     }
                     else{
                         //Agrega nodo de hueco con inicia y tamaño
                         add_LinkedNode("H", inicia,contador);
-                        //System.out.println("H:"+inicia+":"+contador);
+   
                     }
                     contador=1;
                     inicia=i;
