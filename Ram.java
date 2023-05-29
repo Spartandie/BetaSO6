@@ -156,12 +156,6 @@ public class Ram{
 	public void desfragmentar(){
 
 		/*
-			P->H->P
-
-
-			H:0:128
-			P:128:256
-
 
 
 			RAM FRAGMENTADA
@@ -181,39 +175,43 @@ public class Ram{
 		int limiteh;
 		int basep;
 		int limitep;
-		for(h=this.linkedList.getHead();h!=linkedList.getTail();h=h.getNext()){
-			if(h.getTipo().equals("H")){
-				baseh=h.getInicio();
-				limiteh=h.getSize();
-				p=h.getNext();
-				basep=p.getInicio();
-				limitep=p.getSize();
-				System.out.println("H:"+baseh+":"+limiteh);
-				System.out.println("P:"+basep+":"+limitep);
+
+		do{
+
+			for(h=this.linkedList.getHead();h!=linkedList.getTail();h=h.getNext()){
+				if(h.getTipo().equals("H")){
+					baseh=h.getInicio();
+					limiteh=h.getSize();
+					p=h.getNext();
+					basep=p.getInicio();
+					limitep=p.getSize();
+					System.out.println("H:"+baseh+":"+limiteh);
+					System.out.println("P:"+basep+":"+limitep);
 
 
-				for (int i = baseh, j = basep, c=0;c<limiteh;i++,j++,c++){
+					for (int i = baseh, j = basep, c=0;c<limiteh;i++,j++,c++){
+							ram[i]=ram[j];
+							ram[j]=0;
+							/*
+								0 			1
+								0	 		1	
+								1 			1
+								1 			1
+								1           5
+								1           .
+								5   		.
+							*/
+					}
+					for(int i = baseh+limiteh, j=basep+limiteh,c=0; c<limitep-limiteh;i++,j++,c++){
 						ram[i]=ram[j];
 						ram[j]=0;
-						/*
-							0 			1
-							0	 		1	
-							1 			1
-							1 			1
-							1           5
-							1           .
-							5   		.
-						*/
+					}
+
 				}
-				for(int i = baseh+limiteh, j=basep+limiteh,c=0; c<limitep-limiteh;i++,j++,c++){
-					ram[i]=ram[j];
-					ram[j]=0;
-				}
-
-
-
 			}
-		}
+			linkedList.refreshLinkedList(this.ram);
+			System.out.println(linkedList.getH());
+		}while(linkedList.getH()!=1);
 
 	}
 

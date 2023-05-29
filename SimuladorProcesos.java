@@ -9,7 +9,7 @@ public class SimuladorProcesos{
 
 	static int id_count=1;
     //static int[] psize = {64, 128, 256, 512};
-    static int[] psize = {64, 128, 256};
+    static int[] psize = {256};
     static Ram ram = new Ram();
     static ColaProcesos l = new ColaProcesos();
     static ListaFinalizados lf = new ListaFinalizados();
@@ -90,21 +90,18 @@ public class SimuladorProcesos{
 
                 case "10":
                     //Aquí va cualquier cosa que queramos testear
-
-                    ram.imprimirRam();
-
-                    
+                    salir();                
                     break;    
 
                 case "11":
-                    salir();
+                    ram.imprimirRam();
                     break;  
 
                 default:
                     System.out.println("Opción no válida");
                     break;  
             }
-        }while (!option.equals("11"));
+        }while (!option.equals("10"));
     }
 
     public static void limpiarPantalla(){

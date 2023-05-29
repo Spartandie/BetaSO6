@@ -2,7 +2,8 @@ public class ListaLigada{
 	private LinkedNode head;
     private LinkedNode tail;
     private int size=0;
-
+    private int h=0;
+    private int p=0;
      public ListaLigada() {
         this.head=null;
         this.tail=null;
@@ -16,9 +17,25 @@ public class ListaLigada{
         return this.tail;
     }
 
+    public int getH(){
+        return this.h;
+    }
+
+    public int getP(){
+        return this.p;
+    }
+
+
     public boolean add_LinkedNode(String tipo, int inicio, int size){
 
         LinkedNode n = new LinkedNode();
+
+        if(tipo.equals("H")){
+            this.h++;
+        }
+        else{
+            this.p++;
+        }
 
         n.setTipo(tipo);
         n.setInicio(inicio);
@@ -112,6 +129,8 @@ public class ListaLigada{
         this.head=null;
         this.tail=null;
         this.size=0;
+        this.h=0;
+        this.p=0;
     }
 
     public boolean is_empty(){

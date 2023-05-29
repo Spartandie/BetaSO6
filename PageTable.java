@@ -23,7 +23,6 @@ public class PageTable{
         if(this.head==null){
             this.head=f;
             this.tail=f;
-            System.out.println("cabeza tiene"+this.head.getFrame());
             size++;
             return true;
         }
