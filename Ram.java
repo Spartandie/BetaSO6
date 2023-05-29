@@ -76,6 +76,7 @@ public class Ram{
 			//no hay;
 			//menu;
 		}
+		System.out.println("-------------------");
 	}
 
 
@@ -148,6 +149,7 @@ public class Ram{
 				System.out.println("Localidad "+i+" vacia");
 			}
 		}
+		System.out.println("-------------------");
 	}
 
 
@@ -192,7 +194,7 @@ public class Ram{
 
 				for (int i = baseh, j = basep, c=0;c<limiteh;i++,j++,c++){
 						ram[i]=ram[j];
-						//ram[j]=0;
+						ram[j]=0;
 						/*
 							0 			1
 							0	 		1	
@@ -205,7 +207,7 @@ public class Ram{
 				}
 				for(int i = baseh+limiteh, j=basep+limiteh,c=0; c<limitep-limiteh;i++,j++,c++){
 					ram[i]=ram[j];
-					//ram[j]=0;
+					ram[j]=0;
 				}
 
 

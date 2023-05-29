@@ -38,7 +38,9 @@ public class PageTable{
 
     public void printTable(Pnode proceso){
         if(is_empty()){
+            System.out.println("------------------------");
             System.out.println("Tabla vacia");
+            System.out.println("------------------------");
             return ;
         }
 
@@ -56,6 +58,7 @@ public class PageTable{
             
         }
         System.out.println("["+i+"]"+"\t    F# "+t.getFrame());
+        System.out.println("------------------------");
         
     }
 

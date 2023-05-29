@@ -121,20 +121,9 @@ public class ColaProcesos{
         this.head.getTable().imprimirDirecciones(ram.getRam(), this.head.getPid());
         this.head.getTable().printTable(this.head);
 
+        System.out.println("------------------------");
 
 
-
-        /*
-        System.out.println("-------------RAM (localidades) -------");
-        for (int i = 0;i<ram.length; i++){
-            if (ram[i]!=0){
-                System.out.print("Localidad "+i+" tiene el proceso: ");
-                System.out.println(ram[i]);
-            }
-            else {
-                System.out.println("Localidad "+i+" vacia");
-            }
-        }*/
 
 
         return true;
@@ -179,7 +168,9 @@ public class ColaProcesos{
      */
     public boolean is_empty(){
         if(this.head==null && this.tail==null){
+            System.out.println("------------------------");
             System.out.println("Cola vacia");
+            System.out.println("------------------------");
             return true;
         }
         return false;
@@ -249,35 +240,13 @@ public class ColaProcesos{
         
     }
 
-    /*
-    /**
-     * Elimina el ultimo nodo
-     * @param l es la lista
-     */
-    /*
-    public void del_last_node(){
-        if(this.head!=this.tail){
-            this.head.setPrev(this.tail.getPrev());
-            this.tail.getPrev().setNext(this.head);
-            this.tail.setPrev(null);
-            this.tail.setNext(null);
-            this.tail=this.head.getPrev();
-        }
-        else{
-            this.tail.setPrev(null);
-            this.tail.setNext(null);
-            this.head=null;
-            this.tail=null;
-        }
-    }*/
 
 
     public void sendCurrentToTail(){
         if(this.head!=this.tail){
             this.head=this.head.getNext();
             this.tail=this.tail.getNext();
-            //this.head.setNext(this.)
-            //this.tail.setPrev(this.head.getNext())
+
 
         }
     }

@@ -154,14 +154,5 @@ public class Pnode implements Runnable{
         this.pid = id;
     }
 
-    /*
-    /**
-     * funcion dedicada a eleminar un nodo tipo proceso.
-     * @param n es un nodo tipo procesos
-     */
-    /*
-    public void remove_node(Pnode n){
-        n.setPrev(null);
-        n.setNext(null);
-    }*/
+    
 }

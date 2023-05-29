@@ -28,15 +28,3 @@ public class PageNode{
 
 }
 
-/*
-1:Bug en menú de que no cabe 
-2:Ya
-3:Ya
-4:Ya
-5:Ya
-6:Ya
-7:Ya
-8:Ya
-9:No
-10:
-*/

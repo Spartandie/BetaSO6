@@ -42,7 +42,9 @@ public class ListaLigada{
 
 
         if(is_empty()){
+            System.out.println("------------------------");
             System.out.println("Lista ligada vacia");
+            System.out.println("------------------------");
             return ;
         }
 
@@ -58,6 +60,7 @@ public class ListaLigada{
             System.out.println(t.getTipo()+":"+t.getInicio()+":"+t.getSize());        
         }
         System.out.println(t.getTipo()+":"+t.getInicio()+":"+t.getSize());   
+        System.out.println("------------------------");
         
     }
 
