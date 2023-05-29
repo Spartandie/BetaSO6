@@ -44,7 +44,6 @@ public class ListaLigada{
         if(this.head==null){
             this.head=n;
             this.tail=n;
-            //System.out.println("cabeza tiene"+this.head.getFrame());
             this.size++;
             return true;
         }

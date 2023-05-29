@@ -8,8 +8,7 @@ public class SimuladorProcesos{
 
 
 	static int id_count=1;
-    //static int[] psize = {64, 128, 256, 512};
-    static int[] psize = {256};
+    static int[] psize = {64, 128, 256, 512};
     static Ram ram = new Ram();
     static ColaProcesos l = new ColaProcesos();
     static ListaFinalizados lf = new ListaFinalizados();
@@ -29,7 +28,6 @@ public class SimuladorProcesos{
             System.out.println("6.-Ejecutar proceso actual\n7.-Pasar al proceso siguiente\n8.-Matar proceso actual");
             System.out.print("9.-Desfragmentar memoria\n10.Salir\n==>");
             option = in.nextLine();
-            //limpiarPantalla();
             switch (option) {
                 case "1":
                     //do{
@@ -165,12 +163,8 @@ public class SimuladorProcesos{
 
     public static void salir(){
     	System.out.println("Salir del programa");
-    	System.out.println("Presiona enter para salir");
         l.print_list();
         ram.imprimirListaLigada();
-
-    	//limpiarPantalla();
-    	//option = in.nextLine();
     }
 
 

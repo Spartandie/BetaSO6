@@ -60,7 +60,6 @@ public class Ram{
 				}
 
 				if(espacio_disponible>=proceso.getSize()){
-					System.out.println("Entro a if");
 					l.add_fin(proceso);
 					guardardeadebis_ahorasifinal(proceso);
 					break;
@@ -100,8 +99,7 @@ public class Ram{
 					{	
 						if(count%16==0){
 						int marco = (i+1)/16;
-						//System.out.println("Pasamos marco "+marco);
-						
+
 						
 						proceso.getTable().add_frame(marco);
 
